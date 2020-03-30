@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+            <ul>
+                <h4> All Way</h4>
+                <li v-for="task in tasks" v-text="task.description"></li>
+            </ul>
+        <ul>
+            <h4> Incompleted Task with Filter: Long Way</h4>
+            <li v-for="task in tasks" v-if="!task.completed" v-text="task.description"></li>
+        </ul>
+        <ul>
+            <h4> Completed Task with Filter: Computed Way</h4>
+            <li v-for="task in completedTask" v-text="task.description"></li>
+        </ul>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>    
+var app = new Vue({
+            el: '#root',
+            data: {
+                tasks: [
+                    { description: 'Go to the store', completed: true},
+                    { description: 'Finish the project', completed: false},
+                    { description: 'Make a cake', completed: false},
+                    { description: 'Make a call', completed: true},
+                    { description: 'Visiting family', completed: false},
+                    { description: 'Clean room', completed: true}
+                ]
+            },
+
+            computed: {
+                completedTask() {
+                    return this.tasks.filter(task => task.completed)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

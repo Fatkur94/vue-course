@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root" class="container">
+
+        <progress-view inline-template>
+            <div>
+                <h1>Your Progress Through this course is {{ completionRate }}%</h1>
+                <button @click='completionRate +=10'>update completion rate</button>
+            </div>
+        </progress-view>
+    
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script src="inlinetemplate.js"></script>
+</body>
+</html>
